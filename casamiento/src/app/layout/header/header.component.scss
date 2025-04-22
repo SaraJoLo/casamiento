@@ -1,0 +1,114 @@
+/* Reset de márgenes y padding para evitar espacios extra */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100vw;
+  height: 5vh;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  /* Fondo semitransparente */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-family: 'WorkSans-Regular', sans-serif;
+  transition: top 0.3s ease-in-out;
+}
+
+/* Contenedor de idiomas (izquierda en desktop) */
+.language-container {
+  display: flex;
+  gap: 5px;
+  /* Espacio entre botones */
+  order: 1;
+  /* Asegura que se ubique a la izquierda */
+}
+
+/* Contenedor de navegación (derecha en desktop) */
+.site-container {
+  display: flex;
+  gap: 5px;
+  /* Espacio entre botones */
+  order: 2;
+  /* Asegura que se ubique a la derecha */
+}
+
+/* Estilos generales para los botones */
+button {
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: 2px solid black;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.6);
+  /* Fondo blanco semitransparente */
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  -webkit-tap-highlight-color: transparent; // evita resalte azul en iOS touch-action: manipulation;
+}
+
+button:hover {
+  background: black;
+  color: white;
+}
+
+/* 🛠 Responsive: Mobile */
+@media (max-width: 1300px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    font-size: 0.8rem;
+    /* Reducción del tamaño de letra */
+  }
+
+  /* Idiomas arriba, luego site-content */
+  .language-container {
+    order: 2;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .site-container {
+    order: 1;
+    justify-content: center;
+    width: 100%;
+  }
+
+  button {
+    font-size: 0.8rem;
+    /* Reducción de tamaño de los botones */
+    padding: 6px 10px;
+    border: 2px solid black;
+    -webkit-tap-highlight-color: transparent; // evita resalte azul en iOS touch-action: manipulation;
+
+    text-decoration: none;
+  }
+
+}
+
+/* Cambiar la visibilidad del header en mobile */
+.hidden-header {
+  display: none;
+  /* Ocultar el header en secciones que no sean landing-page */
+}
+
+
+/* Estilos para cuando el header se oculta (para la sección que hace scroll) */
+@keyframes showHeader {
+  0% {
+    top: -5vh;
+    /* Desaparece al inicio */
+  }
+
+  100% {
+    top: 0;
+    /* Se muestra cuando hace scroll hacia arriba */
+  }
+}

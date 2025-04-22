@@ -1,0 +1,10 @@
+<div class="slider">
+    <button class="prev" (click)="prevImage()">&#10094;</button>
+    @if(images().length > 0){
+      <div class="images-display">
+        <img [src]="images()[currentIndex()]" alt="slider images">
+      </div>
+    }
+    <button class="next" (click)="nextImage()">&#10095;</button>
+  </div>
+   
