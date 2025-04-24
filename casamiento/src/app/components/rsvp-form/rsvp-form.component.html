@@ -1,6 +1,5 @@
 <div class="rsvp-title">
     <h1>CONFIRMA TU ASISTENCIA</h1>
-    <h3>ANTES DEL 30 DE MAYO</h3>
   </div>
   
   <section id="rsvpForm">
@@ -48,14 +47,6 @@
       </div>
   
       <div class="select">
-        <label>¿NECESITAS TRANSPORTE PARA LLEGAR?</label>
-        <select formControlName="bus">
-          <option value="Si">SI</option>
-          <option value="No">NO</option>
-        </select>
-      </div>
-  
-      <div class="select">
         <label>REQUISITOS ALIMENTARIOS</label>
         <select formControlName="alimentacion">
           <option value="ninguno">NINGUNO</option>
@@ -73,7 +64,7 @@
   
       <div class="formInput">
         <label>¿QUIERES RECIBIR COPIA DE LA CONFIRMACIÓN POR EMAIL?</label>
-        <input type="text" formControlName="mail">
+        <input type="text" alt="escriba su correo para la confirmacion" formControlName="mail">
       </div>
   
       <button type="submit" [disabled]="rsvpForm.invalid">ENVIAR CONFIRMACIÓN</button>

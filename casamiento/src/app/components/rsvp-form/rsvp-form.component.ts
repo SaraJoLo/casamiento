@@ -7,11 +7,12 @@ import {
 } from '@angular/forms';
 import { RsvpEmailService } from '../../services/rsvp-email.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-rsvp-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './rsvp-form.component.html',
   styleUrl: './rsvp-form.component.scss',
 })
@@ -30,7 +31,6 @@ export class RsvpFormComponent implements OnInit {
       invitado1: [''],
       invitado2: [''],
       confirmacion: ['', Validators.required],
-      bus: [''],
       alimentacion: ['', Validators.required],
       comentariosAlimentacion: [''],
       cancion: [''],
@@ -50,20 +50,30 @@ export class RsvpFormComponent implements OnInit {
       return;
     }
 
-    const formData = this.rsvpForm.value;
-
+    const formData = {
+      nombre: this.rsvpForm.value.nombre,
+      nombrePareja: this.rsvpForm.value.nombrePareja,
+      invitado1: this.rsvpForm.value.invitado1,
+      invitado2: this.rsvpForm.value.invitado2,
+      confirmacion: this.rsvpForm.value.confirmacion,
+      alimentacion: this.rsvpForm.value.alimentacion,
+      comentariosAlimentacion: this.rsvpForm.value.comentariosAlimentacion,
+      cancion: this.rsvpForm.value.cancion,
+      mail: this.rsvpForm.value.mail,
+    };
+  
     this.emailService.sendEmail(formData).then(
       (response) => {
         console.log('Confirmación enviada con éxito', response);
-        alert('Confirmación enviada con éxito.');
+        alert('¡Gracias por confirmar! Te esperamos 💕');
+        this.rsvpForm.reset();
         this.router.navigate([], { fragment: 'presents' });
       },
       (error) => {
-        console.error('Error al enviar la confirmación por correo', error);
-        alert(
-          'Error al enviar la confirmación. Por favor, intenta de nuevo.'
-        );
+        console.error('Error al enviar el formulario:', error);
+        alert('Hubo un problema al enviar el formulario. Intentá más tarde.');
       }
     );
+  
   }
 }

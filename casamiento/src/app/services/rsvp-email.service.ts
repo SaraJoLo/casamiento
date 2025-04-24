@@ -5,10 +5,9 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
   providedIn: 'root'
 })
 export class RsvpEmailService {
-private serviceId = 'service_w677deq';
-private templateId = 'template_ki6dsi2';
-
-private userId = 'KIHWqmyPfzSeCPwmZ';
+private serviceId = 'service_yl271ph';
+private templateId = 'template_rsvp_boda';
+private userId = 'Wovzm0AAoLwjrpfBO';
 
   constructor() { 
     emailjs.init(this.userId)
@@ -16,6 +15,5 @@ private userId = 'KIHWqmyPfzSeCPwmZ';
 
   sendEmail(formData:any){
     return emailjs.send(this.serviceId, this.templateId, formData)
-
   }
 }
