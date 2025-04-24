@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './google-maps.component.scss'
 })
 export class GoogleMapsComponent {
-  latitude = 41.3851;
-  longitude = 2.1734;
+  latitude = -31.4018909;
+  longitude =-64.229748;
 }

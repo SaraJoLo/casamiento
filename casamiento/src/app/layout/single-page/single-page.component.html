@@ -1,67 +1,46 @@
-<audio autoplay loop>
-    <source src="assets/songs/The_Shire.mp3" type="audio/mp3">
+<audio autoplay loop id="audio-player">
+    <source src="assets/songs/reiksong.mp3" type="audio/mp3" />
 </audio>
-
-<app-header class="header" [ngClass]="{'hidden-header': !showHeader}"></app-header>
-
-<section id="landing-page">
-    <div class="landing-tittle">
-        <h1>IRENE & JORGE</h1>
-        <h2>{{"NOS CASAMOS"| translate}} 28/06/25</h2>
+  
+  <app-header class="header" [ngClass]="{ 'hidden-header': !showHeader }"></app-header>
+  
+  <section id="landing-page">
+    <div class="landing-title">
+      <h1>BLAN & FABRI</h1>
+      <h2>NOS CASAMOS - 05 / 09 / 2025</h2>
     </div>
     <div class="countdown">
-        <app-countdown></app-countdown>
-        <button id="save" [routerLink]="[]" fragment="rsvp-page">SAVE THE DATE</button>
+      <app-countdown></app-countdown>
+      <button id="save" [routerLink]="[]" fragment="rsvp-page">SAVE THE DATE</button>
     </div>
-</section>
-
-@if(contentLoaded()) {
-<section id="our-love-story">
-    <div id="carrousel-container"> 
-        <app-carousel></app-carousel>
+  </section>
+  
+  <section id="our-love-story" *ngIf="contentLoaded()">
+    <div id="carousel-container">
+      <app-carousel></app-carousel>
     </div>
     <div id="ourLove-container">
-        <h2>{{ "NUESTRA HISTORIA" | translate}}</h2>
-        <p>{{ "LA HISTORIA"| translate}}</p>
+      <h2>NUESTRA HISTORIA</h2>
+      <p>Acá va un texto sobre la historia, algo que quiero decirle a los invitaods y esas cosas</p>
     </div>
-</section>
-
-<section id="when-where">
+  </section>
+  
+  <section id="when-where" *ngIf="contentLoaded()">
     <div id="whenInfo-container">
-        <h2 id="lugar-h2">{{ "LUGAR" | translate }}</h2>
-        <p>{{ "NOS CASAMOS..." | translate }}</p>
-        <app-google-maps id="maps"></app-google-maps>
+      <h2 id="lugar-h2">LUGAR</h2>
+      <p>NOS CASAMOS EN UN LUGAR MÁGICO QUE NOS MARCÓ DESDE EL PRINCIPIO...</p>
+      <app-google-maps id="maps"></app-google-maps>
     </div>
-
+  
     <div class="map-container">
-        <h2>{{ "COMO LLEGAR" | translate }}</h2>
-        <div class="divider"></div>
-        <h2>{{ "EN COCHE" | translate }}</h2>
-        <p>{{ "PARQUING" | translate }}</p>
-        <h2>{{ "EN AUTOBUS" | translate }}</h2>
-        <p>{{ "SERVICIO BUS" | translate }}</p>
-        <h2>TAXI</h2>
-        <p>{{"TAXI"| translate}}</p>
-        <h2>{{ "ALOJAMIENTO" | translate }}</h2>
-        <p>{{ "RECOMENDACION" | translate }}</p>
-        <p id="catalonia">HOTEL CATALONIA GRAN HOTEL VERDI**
-        verdi.recepcion&#64;cataloniahotels.com  Av. Francesc Macià, 62 08208 Sabadell (Barcelona)</p>
+      <h2>COMO LLEGAR</h2>
+      <div class="divider"></div>
+      <h2>EN AUTO</h2>
+      <p>Habrá parking disponible en la entrada del recinto.</p>
     </div>
-</section>
-
-<section id="rsvp-page">
+  </section>
+  
+  <section id="rsvp-page">
     <app-rsvp-form></app-rsvp-form>
-</section>
-
-<section id="presents">
-    <div class="presents-info">
-        <h2>{{ "REGALO" | translate}}</h2>
-        <p>{{ "FERRARI" | translate}} <strong>ES65 1583 0001 1591 3970 0670</strong></p>
-    </div>
-    <div class="presents-img">
-        <img src="assets/img/dexter_ferrari.png" alt="">
-        <img src="assets/img/gigi_ferrari.png" alt="">
-    </div>
-   
-</section>
-}
+  </section>
+  

@@ -1,13 +1,7 @@
-
-<div class="header" [class.hidden]="!isHeaderVisible">
-
-    <div class="language-container">
-        <button  (click)="changeLanguage('cat')">Català</button>
-        <button (click)="changeLanguage('es')">Castellano</button></div>
+<div class="header">
     <div class="site-container">
-    <button [routerLink]="[]" fragment="landing-page">{{"NOS CASAMOS"| translate}}</button>
-    <button [routerLink]="[]" fragment="our-love-story">{{"NUESTRA HISTORIA" | translate}}</button>
-    <button [routerLink]="[]" fragment="when-where">{{"¿DONDE?" | translate}}</button>
-    <button [routerLink]="[]" fragment="rsvp-page">RSVP</button>
+    <button [routerLink]="[]" fragment="landing-page"></button>
+    <button [routerLink]="[]" fragment="our-love-story"></button>
+    <button [routerLink]="[]" fragment="when-where"></button>
     </div>
 </div>

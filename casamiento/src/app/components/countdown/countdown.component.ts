@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './countdown.component.scss'
 })
 export class CountdownComponent implements OnInit, OnDestroy {
-  weddingDate: Date = new Date('2025-06-28T18:00');
+  weddingDate: Date = new Date('2025-09-05T00:00:00');
   remainingTime: any = {};
   private interval: any;
 
@@ -26,17 +26,12 @@ export class CountdownComponent implements OnInit, OnDestroy {
   updateRemainingTime(): void {
     const now = new Date();
     let target = new Date(this.weddingDate);
-    let months = 0;
-
-    while (target > now) {
-      const lastMonth = new Date(target);
-      lastMonth.setMonth(target.getMonth() - 1);
-      if (lastMonth < now) break;
-      months++;
-      target = lastMonth;
+    let months = target.getMonth() - now.getMonth() + (12 * (target.getFullYear() - now.getFullYear()));
+    
+    if (now.getDate() > target.getDate()) {
+      months--;
     }
 
-  
     const countdown = target.getTime() - now.getTime();
 
     this.remainingTime = {
@@ -49,4 +44,3 @@ export class CountdownComponent implements OnInit, OnDestroy {
     };
   }
 }
-
