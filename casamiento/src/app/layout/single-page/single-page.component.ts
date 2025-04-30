@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-single-page',
   standalone: true,
-  imports: [RouterLink, CommonModule, HeaderComponent, TranslateModule, RsvpFormComponent, CountdownComponent, GoogleMapsComponent, CarouselComponent],
+  imports: [CommonModule, HeaderComponent, TranslateModule, RsvpFormComponent, CountdownComponent, GoogleMapsComponent, CarouselComponent],
   templateUrl: './single-page.component.html',
   styleUrls: ['./single-page.component.scss']
 })
@@ -20,31 +20,42 @@ export class SinglePageComponent implements AfterViewInit {
   showHeader: boolean = true;
   lastScrollTop: number = 0;
 
-  @ViewChild('audioPlayer') audioPlayer: any;  // Referencia al elemento de audio
+  @ViewChild('audioPlayer') audioPlayer: any;  
 
   constructor() {
     setTimeout(() => {
       this.contentLoaded.set(true);
-    }, 1500); // Simula la carga de contenido
+    }, 1500);
   }
 
-  // Lógica para controlar la visibilidad del header al hacer scroll
+  saveTheDate() {
+    const title = encodeURIComponent('Casamiento Blan y Fabri');
+    const startDate = '20250905T233000Z';
+    const endDate = '20250906T020000Z';
+    const details = encodeURIComponent(
+      '¡Acompañanos a celebrar nuestro casamiento!\n' +
+      'Ubicación: City Espacio Events\n' +
+      'Google Maps: https://maps.app.goo.gl/MEwD8zBFNxdZmALt5'
+    );
+    const location = encodeURIComponent('City Espacio Events, Córdoba, Argentina');
+  
+    const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
+    window.open(url, '_blank');
+  }
+  
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > this.lastScrollTop) {
-      // Si estamos bajando, ocultamos el header
       this.showHeader = false;
     } else {
-      // Si estamos subiendo, mostramos el header
       this.showHeader = true;
     }
-    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evitar valores negativos
+    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
 
   // Lógica de reproducción de audio
   ngAfterViewInit() {
-    // Comenzar la reproducción automática solo si no ha comenzado
     if (this.audioPlayer && this.audioPlayer.nativeElement.paused) {
       this.audioPlayer.nativeElement.play();
     }

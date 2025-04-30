@@ -1,123 +1,112 @@
-@font-face {
-    font-family: 'WorkSans-Bold';
-    src: url('/assets/fonts/WorkSans-Bold.otf') format('opentype');
+#rsvpForm {
+  background-color: #fef4d1;
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid #900A13;
+  border-radius: 16px;
+  margin: 3rem auto;
+  font-family: 'WorkSans-Regular', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
   }
-  
-  @font-face {
-    font-family: 'WorkSans-Regular';
-    src: url('/assets/fonts/WorkSans-Regular.otf') format('opentype');
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    overflow-x: hidden;
-  }
-  
-  #rsvpForm,
-  #rsvpForm label,
-  #rsvpForm input,
-  #rsvpForm textarea,
-  #rsvpForm select,
-  #rsvpForm p,
-  #rsvpForm button,
-  #rsvpForm .rsvp-tittle {
-    font-family: 'WorkSans-Regular', sans-serif;
-  }
-  
-  #rsvpForm {
-    background-color: #fef4d1;
-    width: 100%;
-    max-width: 700px;
-    padding: 2rem;
-    border: solid 0.5px #142f30;
-    border-radius: 5%;
-    margin-top: 20rem;
-    font-size: 0.9rem;
-  }
-  
-  .rsvp-title {
-    font-family: 'Bellefair-Regular';
-    font-size: 2rem;
-    text-align: center;
-    margin: 0 auto 1rem auto;
-    max-width: 700px;
-  }
-  
-  .formInput {
-    margin-bottom: 1vh;
-  }
-  
-  .formInput label {
+}
+
+.rsvp-title {
+  text-align: center;
+  margin: 6rem auto 1rem;
+  font-family: 'Bellefair-Regular';
+  font-size: 1.2rem;
+  color: #A94B12;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
     font-weight: bold;
-    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    color: #7E2E18;
   }
-  
+
   input,
   textarea,
   select {
-    width: 100%;
-    margin: 1vh 0;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    border: 1px solid #A94B12;
     background-color: #fef7e0;
-    border: solid 0.5px #142f30;
-    padding: 0.8rem;
-    font-size: 0.9rem;
+    border-radius: 8px;
+    font-family: 'WorkSans-Regular';
+    resize: vertical;
   }
-  
-  p {
-    text-align: justify;
-    text-justify: inter-word;
-    font-size: 0.9rem;
+
+  textarea {
+    min-height: 80px;
   }
-  
+}
+
+.info-text {
+  font-size: 0.85rem;
+  color: #333;
+  line-height: 1.5;
+  background-color: #fff5dc;
+  padding: 1rem;
+  border-left: 4px solid #DC2F10;
+  border-radius: 8px;
+}
+
+button {
+  align-self: center;
+  font-size: 0.95rem;
+  padding: 10px 24px;
+  border: 2px solid #A94B12;
+  background-color: transparent;
+  color: #A94B12;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'WorkSans-Bold';
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #A94B12;
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 768px) {
+  #rsvpForm {
+    font-size: 0.85rem;
+  }
+
+  .rsvp-title {
+    font-size: 1.5rem;
+  }
+
+  label {
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 0.85rem;
+  }
+
   button {
-    font-size: 1rem;
-    padding: 8px 12px;
-    border: 2px solid black;
-    background-color: transparent;
-    cursor: pointer;
-    background: 1s ease;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    padding: 8px 20px;
   }
-  
-  button:hover {
-    background: black;
-    color: white;
-  }
-  
-  @media (max-width: 768px) {
-    #rsvpForm {
-      width: 90vw;
-      padding: 5vw;
-      font-size: 0.8rem;
-    }
-  
-    .formInput label {
-      font-size: 0.9rem;
-    }
-  
-    input,
-    textarea,
-    select {
-      font-size: 0.8rem;
-    }
-  
-    p {
-      font-size: 0.8rem;
-    }
-  
-    button {
-      font-size: 0.9rem;
-      padding: 6px 8px;
-      margin-bottom: 0.5rem;
-    }
-  
-    .rsvp-tittle {
-      font-size: 24px;
-    }
-  }
-  
+}

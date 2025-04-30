@@ -1,7 +1,22 @@
-<div class="header">
-    <div class="site-container">
-    <button [routerLink]="[]" fragment="landing-page"></button>
-    <button [routerLink]="[]" fragment="our-love-story"></button>
-    <button [routerLink]="[]" fragment="when-where"></button>
+<header class="header">
+  <div class="logo">
+    <a href="#" (click)="navigateTo('landing-page')">
+      <img src="/assets/icon/freepik__love_wedding.ico" alt="Logo">
+    </a>
+  </div>
+  
+  
+    <div class="hamburger-menu" (click)="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
-</div>
+  
+    <nav class="nav-links" [class.active]="isMenuOpen">
+      <a href="#" (click)="navigateTo('landing-page')">Inicio</a>
+      <a href="#" (click)="navigateTo('our-love-story')">Nuestra Historia</a>
+      <a href="#" (click)="navigateTo('when-where')">¿Dónde y Cuándo?</a>
+      <a href="#" (click)="navigateTo('rsvp-page')">MI TARJETA</a>
+    </nav>
+  </header>
+  

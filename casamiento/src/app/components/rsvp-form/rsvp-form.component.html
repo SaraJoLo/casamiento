@@ -1,73 +1,55 @@
 <div class="rsvp-title">
-    <h1>CONFIRMA TU ASISTENCIA</h1>
-  </div>
-  
-  <section id="rsvpForm">
-    <form [formGroup]="rsvpForm" (ngSubmit)="sendRsvp($event)">
-      <div class="formInput">
-        <label>NOMBRE Y APELLIDO</label>
-        <input type="text" formControlName="nombre">
-      </div>
-  
-      <div class="formInput">
-        <label>PAREJA*</label>
-        <input type="text" formControlName="nombrePareja">
-      </div>
-  
-      <p class="info-text">
-        *NOS ENCANTARÍA QUE TODOS NUESTROS SERES QUERIDOS ESTUVIERAN CON NOSOTROS EN ESTE DÍA TAN ESPECIAL, Y PARA ELLO, NUESTRAS INVITACIONES HAN SIDO CUIDADOSAMENTE PERSONALIZADAS CON EL NOMBRE DE CADA INVITADO. SI TIENES ALGUNA DUDA O PREGUNTA SOBRE TU INVITACIÓN, NO DUDES EN CONTACTARNOS.
-      </p>
-  
-      <p class="info-text">
-        ¿SON MÁS DE DOS EN VUESTRA INVITACIÓN? ¡CONFIRMA AL RESTO DE LA FAMILIA O GRUPO!
-      </p>
-  
-      <button type="button" (click)="showMoreInputs()">AÑADIR MÁS INVITADOS</button>
-  
-      <ng-container *ngIf="showInputs">
-        <div class="formInput">
-          <label>INVITADO</label>
-          <input type="text" formControlName="invitado1">
-        </div>
-  
-        <div class="formInput">
-          <label>INVITADO</label>
-          <input type="text" formControlName="invitado2">
-        </div>
-      </ng-container>
-  
-      <div class="divider"></div>
-  
-      <div class="select">
-        <label>¿CONFIRMAS ASISTENCIA?</label>
-        <select formControlName="confirmacion">
-          <option value="Si">SI</option>
-          <option value="No">NO</option>
-        </select>
-      </div>
-  
-      <div class="select">
-        <label>REQUISITOS ALIMENTARIOS</label>
-        <select formControlName="alimentacion">
-          <option value="ninguno">NINGUNO</option>
-          <option value="intolerancias">INTOLERANCIAS</option>
-          <option value="alergias">ALERGIAS</option>
-          <option value="dietaEspecia">DIETA ESPECIAL</option>
-        </select>
-        <textarea formControlName="comentariosAlimentacion" placeholder="Comentarios adicionales"></textarea>
-      </div>
-  
-      <div class="formInput">
-        <label>¿QUIERES MANDARNOS ALGUNA CANCIÓN PARA LA FIESTA?</label>
-        <input type="text" formControlName="cancion">
-      </div>
-  
-      <div class="formInput">
-        <label>¿QUIERES RECIBIR COPIA DE LA CONFIRMACIÓN POR EMAIL?</label>
-        <input type="text" alt="escriba su correo para la confirmacion" formControlName="mail">
-      </div>
-  
-      <button type="submit" [disabled]="rsvpForm.invalid">ENVIAR CONFIRMACIÓN</button>
-    </form>
-  </section>
-  
+  <h2>CONFIRMA TU ASISTENCIA</h2>
+</div>
+
+<section id="rsvpForm">
+  <form [formGroup]="rsvpForm" (ngSubmit)="sendRsvp($event)">
+    <div class="form-group">
+      <label for="nombre">Nombre y Apellido</label>
+      <input type="text" id="nombre" formControlName="nombre" />
+    </div>
+
+    <div class="form-group">
+      <label for="nombrePareja">Pareja*</label>
+      <input type="text" id="nombrePareja" formControlName="nombrePareja" />
+    </div>
+
+    <p class="info-text">
+      *Nos encantaría que todos nuestros seres queridos estén con nosotros en este día tan especial.
+      Si tenés alguna duda sobre tu invitación, no dudes en contactarnos.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="form-group">
+      <label for="confirmacion">¿Confirmás asistencia?</label>
+      <select id="confirmacion" formControlName="confirmacion">
+        <option value="Si">Sí</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="alimentacion">Requisitos alimentarios</label>
+      <select id="alimentacion" formControlName="alimentacion">
+        <option value="ninguno">Ninguno</option>
+        <option value="intolerancias">Intolerancias</option>
+        <option value="alergias">Alergias</option>
+        <option value="dietaEspecial">Dieta especial</option>
+      </select>
+      <textarea formControlName="comentariosAlimentacion" placeholder="Comentarios adicionales"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="cancion">¿Querés mandarnos alguna canción para la fiesta?</label>
+      <input type="text" id="cancion" formControlName="cancion" />
+    </div>
+
+    <div class="form-group">
+      <label for="mail">¿Querés recibir confirmación por email?</label>
+      <input type="email" id="mail" formControlName="mail" />
+    </div>
+
+    <button type="submit" [disabled]="rsvpForm.invalid">Enviar Confirmación</button>
+  </form>
+</section>

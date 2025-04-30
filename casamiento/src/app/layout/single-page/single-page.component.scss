@@ -3,495 +3,262 @@
   src: url('/assets/fonts/Bellefair-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src: url('/assets/fonts/WorkSans-Regular.otf') format('opentype');
+}
 
 @font-face {
   font-family: 'WorkSans-Bold';
   src: url('/assets/fonts/WorkSans-Bold.otf') format('opentype');
 }
 
-@font-face {
-  font-family: 'WorkSans-Regular';
-  src: url('/assets/fonts/WorkSans-Regular.otf') format('opentype');
-}
-.header{
-    width: 100vw;
-    height: 5vh;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: transparent;
-    display: flex;
-
- 
-font-family: 'WorkSans-Regular';  
-}
-
-@media (max-width: 860px) {
-  .header {
-    flex-direction: column; /* Cambia a una disposición en columna */
-    align-items: center;
-    height: auto; /* Ajusta la altura automáticamente */
-
-  }
-
-}
-
 html, body {
-  overflow-x: hidden; 
+  margin: 0;
+  padding: 0;
   width: 100vw;
- }
-
- h1{
-  font-family: 'Bellefair-Regular' !important;  
- }
-
-.header.sticky {
-  background: rgba(57, 52, 52, 0.9); /* Fondo semi-transparente */
-  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'WorkSans-Regular';
+  background-color: #E6CEA4;
+  color: #333;
+  scroll-behavior: smooth;
 }
 
-
-section{
-
-    width: 100vw;
-    max-width: 100%;
-    min-height: calc(100vh - 5vh);  /* Resto del espacio tras el header */
-    height: auto;
-    overflow-x: hidden; /* Para evitar que el contenido se desborde */
+h1 {
+  font-family: 'Bellefair-Regular';
+  font-size: 4rem;
+  color: #A94B12;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
-#landing-page,
-#our-love-story,
-#when-where {
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-color: #fff; /* Asegura que haya un color de fondo por si no se carga la imagen */
+h2 {
+  font-family: 'Bellefair-Regular';
+  font-size: 2rem;
+  color: #900A13;
+  margin-bottom: 0.5rem;
 }
 
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
 
+button {
+  font-family: 'WorkSans-Bold';
+}
+
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+section {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
 
 #landing-page {
-    background: url('/assets/img/portada copia.jpeg') no-repeat center center / cover;
-    background-attachment: fixed;
-    background-size: 100vw;
-    margin-top: -5vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+  background: url('/assets/IMG/767d5a1a4ab8dfa33c87dd0ebcd05bfb.jpg') center center / cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
 
+  .landing-title {
+    h1 {
+      font-size: 4rem;
+      text-shadow: 3px 3px 4px rgb(255, 255, 255);
+    }
 
-    
-
-  
-    .landing-tittle {
-      position: absolute;
-      top: 10%;
-      z-index: 2;
-      font-size: 2rem;
+    h2 {
+      font-size: 1.5rem;
       color: #fff;
-      text-transform: uppercase;
-      transition: opacity 0.5s ease-in-out;
-      font-family: 'Bellefair-Regular';
-      &.hidden {
-        opacity: 0;
-      }
-  
-      h1 {
-        margin: 5px 0;
-        font-weight: bold;
-        font-family: 'Bellefair-Regular', !important;
-        text-shadow: 1px 1px 2px black, -1px -1px 2px black, 1px -1px 2px black, -2px 2px 4px black;
-        
-    
-      }
-    }
-  
-    #ourLove-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      overflow: hidden;
-      position: relative;
-      transition: width 0.5s ease, height 0.5s ease;
-  
-      .love-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-    }
-    .landing-tittle h2 {
-      color: white; /* Texto blanco */
-      text-shadow: 1px 1px 2px black, -1px -1px 2px black, 1px -1px 2px black, -2px 2px 4px black;
-      font-family: 'Bellefair-Regular';
-    }
-  
-    .countdown {
-      position: absolute;
-      bottom: 10%;
-      z-index: 2;
-      font-size: 1.1rem;
-      color: #fff;
-      transition: opacity 0.5s ease-in-out;
-      font-family: 'WorkSans-Regular';  
-  
-      &.hidden {
-        opacity: 0;
-      }
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
     }
   }
-  #save {
-    background-color: white; /* Fondo blanco */
-    color: #F14E95; /* Letras rosas */
-    border: none; /* Sin borde */
-    border-radius: 50px; /* Bordes redondeados en los extremos */
-    padding: 15px 40px; /* Espaciado dentro del botón */
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Transición para el hover */
-    display: inline-block;
-    text-align: center;
+
+  .countdown {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    color: #fff;
+  }
+}
+
+#save {
+  background-color: #C49393;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
 }
 
 #save:hover {
-    background-color: #F14E95; /* Fondo rosa en hover */
-    color: white; /* Letras blancas en hover */
+  background-color: #8AAD5A;
 }
 
-@media (max-width: 768px) {
-    #save {
-        padding: 12px 30px; /* Reducir el tamaño del botón en mobile */
-        font-size: 1rem; /* Reducir el tamaño de la fuente */
-    }
-}
-
-
-  @media (max-width: 768px) {
-    #landing-page {
-      background-size: cover; /* Se asegura de cubrir la pantalla */
-      background-position: 63% center;
-      background-attachment: scroll !important;
-      max-width: 100%;
-      width: 100vw;
-      overflow-x: hidden;
-    }
-  }
-  #our-love-story {
-    font-family: 'WorkSans-Regular';
-    background-color: #fef7e0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    max-width: 100vw;
-    gap: 20px;
-    padding: 20px;
-    overflow-x: hidden; /* Evita que el contenido haga la página más ancha */
-    h2 {
-      font-weight: bold; 
-      font-family: 'Bellefair-Regular';
-      font-size: 2rem;
-      
-    }
-  
-    #carrousel-container {
-        flex: 1;
-        max-width: 50%;
-        height: 80%;
-        max-width: 90%; /* Limita el ancho del texto dentro del contenedor */
-        
-        app-carrousel {
-            width: 100%;
-            height: 100%;
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; // Ajusta las imágenes sin deformarlas
-            border-radius: 10px;
-        }
-
-       
-    }
-
-    #ourLove-container {
-        flex: 1;
-        max-width: 50%;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: justify;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-        box-sizing: border-box;
-    
-        
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            font-family: 'Bellefair-Regular';  
-        }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            max-width: 90%; /* Limita el ancho del texto dentro del contenedor */
-        }
-    }
-}
-
-
-@media (max-width: 768px) {
-  
-    #our-love-story {
-        flex-direction: column;
-        height: auto;
-        padding: 40px 20px;
-        overflow-x: hidden;
-        max-width: 100%;
-
-        #carrousel-container, #ourLove-container {
-            max-width: 100%;
-            width: 90%;
-            height: auto;
-
-        }
-
-        #carrousel-container {
-            order: 2; // Se coloca debajo del texto
-        }
-
-        #ourLove-container {
-            order: 1; // Se coloca arriba
-            text-align: center;
-            text-align: justify;
-        }
-    }
-}
-
-
-/* ========== WHEN & WHERE SECTION ========== */
-#when-where {
-  background: url('/assets/img/Screenshot 2025-03-12 at 20.56.02.png') no-repeat center center / cover;
+#our-love-story {
+  background-color: #fff;
   display: flex;
-  max-width: 100%;
-  overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
-  font-family: "WorkSans-Regular";
   flex-wrap: wrap;
-  align-items: flex-start;
+  gap: 2rem;
+
+  #carousel-container, #ourLove-container {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  #carousel-container img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  #ourLove-container {
+    text-align: justify;
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
 }
 
-/* ---------- LEFT COLUMN (INFO) ---------- */
-#whenInfo-container {
-  width: 50%;
+
+#when-where {
+  background: url('/assets/img/767d5a1a4ab8dfa33c87dd0ebcd05bfb.JPG') center center / cover no-repeat fixed;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-
-  h2 {
-    font-family: 'Bellefair-Regular';  
-    background-color: rgba(254, 247, 224, 0.6);
-    padding: 10px 20px;
-    border-radius: 15px;
-    display: inline-block;
-    margin-bottom: 0; // ❌ sin espacio debajo
-  }
-
-  p {
-    background-color: rgba(254, 247, 224, 0.6);
-    padding: 10px 15px;
-    border-radius: 15px;
-    margin-top: 0; // ❌ sin espacio arriba para pegarlo al h2
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-
-  #lugar-h2 {
-    margin-top: 50px; // Puedes ajustar si necesitas centrar visualmente
-  }
 }
 
-/* ---------- RIGHT COLUMN (MAP + TEXT) ---------- */
-.map-container {
-  width: 50%;
-  padding: 0,5rem;
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
+#whenInfo-container, .map-container {
+  margin-bottom: 3rem;
 
   h2 {
-    background-color: rgba(254, 247, 224, 0.5);
-    padding: 8px 18px;
-    border-radius: 15px;
-    display: inline-block;
-    margin-bottom: 0; // ❌ sin espacio debajo
-    font-family: 'Bellefair-Regular';  
+    font-size: 1.8rem;
+    color: #DC2F10;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
   }
 
   p {
-    background-color: rgba(254, 247, 224, 0.5);
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.75);
+    color: #333;
     padding: 10px 15px;
-    border-radius: 15px;
-    margin-top: 0; // ❌ sin espacio arriba
-    margin-bottom: 0.2rem;
+    border-radius: 10px;
     line-height: 1.6;
-  }
-
-  .divider {
-    height: 2px;
-    width: 80%;
-    background-color: rgba(0, 0, 0, 0.2);
-    margin: 1rem 0;
-  }
-
-  #catalonia {
-    font-weight: bold;
-    font-size: 0.95rem;
   }
 
   app-google-maps {
     width: 100%;
-    height: 300px;
-    border-radius: 15px;
-    margin: 1rem 0;
-    display: block;
+    height: 280px;
+    border-radius: 12px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .divider {
+    height: 2px;
+    background-color: #900A13;
+    width: 40%;
+    margin: 3rem 0;
   }
 }
 
-/* ========== RESPONSIVE - MOBILE (max-width: 768px) ========== */
-@media (max-width: 768px) {
-  #when-where {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding-bottom: 2rem;
-    max-width: 100%;
-    width: 100vw;
-  }
-
-  #whenInfo-container,
-  .map-container {
-    width: 90%;
-    max-width: 100%;
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  .map-container app-google-maps {
-    width: 100%;
-    height: 250px;
-  }
-
-  /* Mantener los mismos márgenes entre h2 y p */
-  #whenInfo-container h2,
-  .map-container h2 {
-    margin-bottom: 0;
-  }
-
-  #whenInfo-container p,
-  .map-container p {
-    margin-top: 0;
-  }
+#rsvp-page {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 4rem 0;
 }
 
-
-
-#rsvp-page{
-    background-color: #fef7e0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'WorkSans-Regular';  
-    max-width: 100%;
-    width: 100vw;
-}
-
-
-
+// ======= PRESENTS =======
 #presents {
-  background-color: #fef7e0;
-  font-family: 'WorkSans-Regular';
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
+  background-color: #fff;
   padding: 2rem;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-.presents-info {
-  width: 90%;
-  height: 30vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-}
 
-#presents h2 {
-  font-family: 'Bellefair-Regular';
-  font-size: 4rem;
-  margin: 0;
-}
-
-.presents-img {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-/* ✅ Imágenes 25% más grandes */
-.presents-img img {
-  width: 500px; /* antes 250px */
-  height: auto;
-  object-fit: contain;
-}
-
-/* ✅ Estilos para mobile */
-@media (max-width: 768px) {
-  .presents-img {
-    flex-direction: column;
-    max-width: 100%;
-    width: 100vw;
-  }
-
-  #presents h2 {
+  h2 {
     font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #A94B12;
   }
 
-  .presents-info {
-    height: 30vh;
-    text-align: center;
+  .presents-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+  }
+}
+
+// ======= RESPONSIVE =======
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  #landing-page {
+    background-attachment: scroll;
+
+    .landing-title h1 {
+      font-size: 2.3rem;
+    }
+
+    .landing-title h2 {
+      font-size: 1.2rem;
+    }
+  }
+
+  #save {
+    font-size: 0.95rem;
+    padding: 12px 24px;
+  }
+
+  #our-love-story, #when-where {
+    flex-direction: column;
+  }
+
+  .presents-img img {
+    width: 90%;
   }
 }
