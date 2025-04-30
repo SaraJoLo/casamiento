@@ -30,7 +30,7 @@ export class RsvpFormComponent implements OnInit {
       nombrePareja: [''],
       invitado1: [''],
       invitado2: [''],
-      confirmacion: ['', Validators.required],
+      confirmacion: [false],
       alimentacion: ['', Validators.required],
       comentariosAlimentacion: [''],
       cancion: [''],
@@ -53,14 +53,14 @@ export class RsvpFormComponent implements OnInit {
     const formData = {
       nombre: this.rsvpForm.value.nombre,
       nombrePareja: this.rsvpForm.value.nombrePareja,
-      invitado1: this.rsvpForm.value.invitado1,
-      invitado2: this.rsvpForm.value.invitado2,
-      confirmacion: this.rsvpForm.value.confirmacion,
+      confirmacion: this.rsvpForm.value.confirmacion ? 'Sí' : 'No',
       alimentacion: this.rsvpForm.value.alimentacion,
       comentariosAlimentacion: this.rsvpForm.value.comentariosAlimentacion,
       cancion: this.rsvpForm.value.cancion,
       mail: this.rsvpForm.value.mail,
+      to_email: this.rsvpForm.value.mail,
     };
+    
   
     this.emailService.sendEmail(formData).then(
       (response) => {

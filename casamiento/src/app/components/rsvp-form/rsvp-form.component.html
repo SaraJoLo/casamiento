@@ -23,10 +23,13 @@
 
     <div class="form-group">
       <label for="confirmacion">¿Confirmás asistencia?</label>
-      <select id="confirmacion" formControlName="confirmacion">
-        <option value="Si">Sí</option>
-        <option value="No">No</option>
-      </select>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" formControlName="confirmacion" />
+          Confirmo mi asistencia
+        </label>
+      </div>
+      
     </div>
 
     <div class="form-group">
