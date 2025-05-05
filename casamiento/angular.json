@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "irene-coke-wedding": {
+    "casamiento-blanca-fabri": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/irene-coke-wedding",
+            "outputPath": "dist/casamiento-blanca-fabri",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "irene-coke-wedding:build:production"
+              "buildTarget": "casamiento-blanca-fabri:build:production"
             },
             "development": {
-              "buildTarget": "irene-coke-wedding:build:development"
+              "buildTarget": "casamiento-blanca-fabri:build:development"
             }
           },
           "defaultConfiguration": "development"
