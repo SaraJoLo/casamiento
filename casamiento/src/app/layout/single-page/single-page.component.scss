@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'Bellefair-Regular';
   src: url('/assets/fonts/Bellefair-Regular.ttf') format('truetype');
@@ -13,15 +14,17 @@
   src: url('/assets/fonts/WorkSans-Bold.otf') format('opentype');
 }
 
-html, body {
+.single-page {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   font-family: 'WorkSans-Regular';
   background-color: #E6CEA4;
   color: #333;
   scroll-behavior: smooth;
+  border-radius: 5px;
 }
 
 h1 {
@@ -77,6 +80,7 @@ section {
   height: 100vh;
   text-align: center;
   color: #fff;
+  width: 100%;
 
   .landing-title {
     h1 {
@@ -102,7 +106,6 @@ section {
   background-color: #C49393;
   color: white;
   border: none;
-  padding: 15px 40px;
   border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
@@ -114,26 +117,40 @@ section {
 #save:hover {
   background-color: #8AAD5A;
 }
-
 #our-love-story {
+  width: 100%;
+  box-sizing: border-box;
   background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
 
   #carousel-container, #ourLove-container {
-    flex: 1;
-    min-width: 300px;
+    flex: 1 1 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  #carousel-container img {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
+  #carousel-container {
+    img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+    }
   }
 
   #ourLove-container {
+    flex-direction: column;
     text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
 
     p {
       font-size: 1.1rem;
@@ -143,8 +160,8 @@ section {
 }
 
 
+
 #when-where {
-  background: url('/assets/img/767d5a1a4ab8dfa33c87dd0ebcd05bfb.JPG') center center / cover no-repeat fixed;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -223,7 +240,6 @@ section {
   }
 }
 
-// ======= RESPONSIVE =======
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -235,6 +251,7 @@ section {
 
   p {
     font-size: 1rem;
+    font-family: 'WorkSans-Regular';
   }
 
   #landing-page {
@@ -254,11 +271,36 @@ section {
     padding: 12px 24px;
   }
 
-  #our-love-story, #when-where {
+  #our-love-story {
+    display: block;
     flex-direction: column;
+    margin: 0;
+    height: 10%;
+
+    #carousel-container,
+    #ourLove-container {
+      flex: none;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #carousel-container img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+  }
+
+  #when-where {
+    flex-direction: column;
+    height: auto;
+    margin-top: -10px;
   }
 
   .presents-img img {
     width: 90%;
   }
 }
+

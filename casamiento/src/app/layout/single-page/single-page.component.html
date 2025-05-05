@@ -1,3 +1,4 @@
+<section class="single-page">
 <audio autoplay loop id="audioPlayer">
     <source src="assets/songs/reiksong.mp3" type="audio/mp3" />
 </audio>
@@ -17,8 +18,13 @@
   
   <section id="our-love-story" *ngIf="contentLoaded()">
     <div id="ourLove-container">
-      <h2>NUESTRA HISTORIA</h2>
-      <p>Acá va un texto sobre la historia, algo que quiero decirle a los invitaods y esas cosas</p>
+      <h2>"Y UN DÍA..</h2>
+      <p>Un día dijimos sí,
+        sin promesas imposibles,
+        solo con el deseo
+        de caminar juntos.
+        Hoy, ese sí florece
+        en unión y alegría compartida."</p>
     </div>
     <div id="carousel-container">
       <app-carousel></app-carousel>
@@ -28,7 +34,7 @@
   <section id="when-where" *ngIf="contentLoaded()">
     <div id="whenInfo-container">
       <h2 id="lugar-h2">LUGAR</h2>
-      <p>NOS CASAMOS EN UN LUGAR MÁGICO...</p>
+      <p>NOS CASAMOS EN UN LUGAR ÚNICO...</p>
       <app-google-maps id="maps"></app-google-maps>
     </div>
   
@@ -42,4 +48,4 @@
   <section id="rsvp-page">
     <app-rsvp-form></app-rsvp-form>
   </section>
-  
+</section>

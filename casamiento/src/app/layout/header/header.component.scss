@@ -14,13 +14,14 @@ $color-4: #DC2F10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(230, 206, 164, 0.8); // fondo neutro suave
+  background: rgba(230, 206, 164, 0.8);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Work Sans', sans-serif;
+  padding: 0 1rem;
+  box-sizing: border-box;
 
   .logo {
     display: flex;
@@ -74,12 +75,17 @@ $color-4: #DC2F10;
     }
 
     .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100vw;
       display: none;
       flex-direction: column;
       gap: 2rem;
-      width: 100%;
-      background-color: rgba(230, 206, 164, 0.9);
-      padding: 0;
+      background-color: rgba(230, 206, 164, 0.95);
+      padding: 1.5rem 1rem;
+      box-sizing: border-box;
+      overflow-x: hidden;
 
       a {
         padding: 1rem;
@@ -87,6 +93,8 @@ $color-4: #DC2F10;
         color: white;
         font-size: 1.2rem;
         font-weight: bold;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       &.active {

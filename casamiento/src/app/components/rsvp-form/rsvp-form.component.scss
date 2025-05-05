@@ -1,10 +1,9 @@
 #rsvpForm {
   background-color: #fef4d1;
   width: 100%;
-  max-width: 700px;
+  padding: 1.5rem;
   border: 1px solid #900A13;
   border-radius: 16px;
-  margin: 3rem auto;
   font-family: 'WorkSans-Regular', sans-serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
@@ -92,6 +91,7 @@ button {
 
   .rsvp-title {
     font-size: 1.5rem;
+    margin: 3rem auto 1rem;
   }
 
   label {
@@ -109,4 +109,13 @@ button {
     font-size: 0.85rem;
     padding: 8px 20px;
   }
+}
+
+#rsvp-page {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
 }
