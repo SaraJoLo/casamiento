@@ -6,7 +6,7 @@ import { RsvpFormComponent } from "../../components/rsvp-form/rsvp-form.componen
 import { CountdownComponent } from "../../components/countdown/countdown.component";
 import { GoogleMapsComponent } from "../../components/google-maps/google-maps.component";
 import { CarouselComponent } from "../../components/carousel/carousel.component";
-import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-single-page',

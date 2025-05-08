@@ -19,11 +19,13 @@ export class HeaderComponent implements OnInit {
   }
 
   navigateTo(sectionId: string): void {
+    this.isMenuOpen = false;
+  
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    this.isMenuOpen = false;
   }
+  
   
 }

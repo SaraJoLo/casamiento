@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RsvpEmailService {
-private serviceId = 'service_yl271ph';
-private templateId = 'template_rsvp_boda';
-private userId = 'Wovzm0AAoLwjrpfBO';
+private serviceId = environment.emailjs.serviceID;
+private templateId = environment.emailjs.templateID;
+private userId = environment.emailjs.publicKey;
 
   constructor() { 
     emailjs.init(this.userId)
